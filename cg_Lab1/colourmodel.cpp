@@ -61,14 +61,13 @@ void ColourModel::setColourInHSV(double _in_h, double _in_s, double _in_v)
     }
 }
 
-void ColourModel::setColourInCMYK(int _in_c, int _in_m, int _in_y, int _in_k)
+void ColourModel::setColourInCMYK(int _in_c, int _in_m, int _in_y)
 {
-    if (_in_c >= 0 && _in_c <= 100 && _in_m >= 0 && _in_m <= 100 && _in_y >= 0 && _in_y <= 100
-        && _in_k >= 0 && _in_k <= 100) {
+    if (_in_c >= 0 && _in_c <= 100 && _in_m >= 0 && _in_m <= 100 && _in_y >= 0 && _in_y <= 100) {
 
-        rgb.r = 255 * (100 - _in_c) * (100 - _in_k) / 10000;
-        rgb.g = 255 * (100 - _in_m) * (100 - _in_k) / 10000;
-        rgb.b = 255 * (100 - _in_y) * (100 - _in_k) / 10000;
+        rgb.r = 255 * (100 - _in_c) / 100;
+        rgb.g = 255 * (100 - _in_m) / 100;
+        rgb.b = 255 * (100 - _in_y) / 100;
 
         emit colourChanged("CMYK");
     }
@@ -152,14 +151,18 @@ CMYK ColourModel::getCMYK()
 
     double c, m, y, k;
 
+    c = 1 - rgb.r / 255.;
+    m = 1 - rgb.g / 255.;
+    y = 1 - rgb.b / 255.;
+
     int max;
     max = rgb.r > rgb.g ? rgb.r : rgb.g;
     max = max > rgb.b ? max : rgb.b;
     k = 1 - max / 255.;
 
-    c = (1 - rgb.r / 255. - k) / (1 - k);
-    m = (1 - rgb.g / 255. - k) / (1 - k);
-    y = (1 - rgb.b / 255. - k) / (1 - k);
+    c = c - k;
+    m = m - k;
+    y = y - k;
 
     _out_cmyk.c = c * 100;
     _out_cmyk.m = m * 100;

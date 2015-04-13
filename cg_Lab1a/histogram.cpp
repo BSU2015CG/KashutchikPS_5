@@ -9,7 +9,7 @@ void Histogram::setData(QVector<int> _in_data, QColor _in_colour)
     colour = _in_colour;
     data = _in_data;
 
-    max = 0;
+    max = mean = 0;
     int counter = 0;
     for (int i = 0; i < data.size(); i++) {
         max = max < data[i] ? data[i] : max;
@@ -38,7 +38,7 @@ void Histogram::paintEvent(QPaintEvent *event)
                              (height - textHeight) * (max - data[i]) / max);
         }
 
-        QString text = "Mean: " + QString::number(mean);
+        QString text = "Mean: " + QString::number(mean, 'f');
         painter.setPen(QPen(Qt::black));
         QRect rect = painter.fontMetrics().boundingRect(text);
         QRect textRect(painter.fontMetrics().width(" "), height - rect.height(), rect.width(),

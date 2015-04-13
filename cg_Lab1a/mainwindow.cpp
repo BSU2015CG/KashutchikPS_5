@@ -23,10 +23,10 @@ void MainWindow::loadImage(QString _in_fileName)
     QVector<int> blue(256);
 
     uchar *bits = image.bits();
-    for (int i = 0; i < image.width() * image.height() * 3; i += 4) {
-        red[(int)bits[i]]++;
-        green[(int)bits[i + 1]]++;
-        blue[(int)bits[i + 2]]++;
+    for (int i = 0; i < image.width() * image.height(); i++) {
+        blue[(int)bits[4 * i]]++;
+        green[(int)bits[4 * i + 1]]++;
+        red[(int)bits[4 * i + 2]]++;
     }
 
     ui->histogramRed->setData(red, QColor(Qt::red));

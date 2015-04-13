@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 using System.Drawing.Imaging;
-
+using System.IO;
 
 namespace cg_Lab2
 {
@@ -63,6 +63,15 @@ namespace cg_Lab2
                             txtChrominanceTable.Text += String.Format("{0,4:X} ", property.Value[i * 16 + j]);
                         txtChrominanceTable.Text += Environment.NewLine;
                     }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (folderBrowserDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                foreach (string fileName in Directory.GetFiles(folderBrowserDialog1.SelectedPath))
+                    updatePicture(fileName);
+            }
         }
     }
 }

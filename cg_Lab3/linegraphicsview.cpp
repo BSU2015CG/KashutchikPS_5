@@ -3,8 +3,6 @@
 #include <math.h>
 #include <QElapsedTimer>
 
-#include <QDebug>
-
 LineGraphicsView::LineGraphicsView(QWidget *parent) : QGraphicsView(parent)
 {
     pixelSize = QSize(1, 1);
@@ -54,7 +52,7 @@ void LineGraphicsView::drawStepwiseLine(QPoint _in_begin, QPoint _in_end)
 
             for (int y = begin + 1; y < end; y++) {
                 double x = (y - b) / k;
-                int int_x = x > 0 ? (int)(x + 0.5) : (int)(x - 0.5);
+                int int_x = x > 0 ? (int)(x + 0.4) : (int)(x - 0.4);
                 setPixel(QPoint(int_x, y), Qt::blue);
             }
         } else {
@@ -63,7 +61,7 @@ void LineGraphicsView::drawStepwiseLine(QPoint _in_begin, QPoint _in_end)
 
             for (int x = begin + 1; x < end; x++) {
                 double y = x * k + b;
-                int int_y = y > 0 ? (int)(y + 0.5) : (int)(y - 0.5);
+                int int_y = y > 0 ? (int)(y + 0.4) : (int)(y - 0.4);
                 setPixel(QPoint(x, int_y), Qt::blue);
             }
         }

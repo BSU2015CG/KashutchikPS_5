@@ -14,7 +14,7 @@ public:
     ColourModel();
     void setColourInRGB(int _in_r, int _in_g, int _in_b);
     void setColourInHSV(double _in_h, double _in_s, double _in_v);
-    void setColourInCMYK(int _in_c, int _in_m, int _in_y, int _in_k);
+    void setColourInCMYK(int _in_c, int _in_m, int _in_y);
     void setColourInLUV(int _in_l, int _in_u, int _in_v);
     RGB getRGB();
     HSV getHSV();

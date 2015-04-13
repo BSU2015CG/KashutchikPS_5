@@ -143,17 +143,20 @@ void MainWindow::hsvSBoxChanged()
 void MainWindow::cmykSliderMoved()
 {
     colourModel->setColourInCMYK(ui->sliderCMYKc->value(), ui->sliderCMYKm->value(),
-                                 ui->sliderCMYKy->value(), ui->sliderCMYKk->value());
+                                 ui->sliderCMYKy->value());
+    ui->sliderCMYKk->setSliderPosition(0);
+    ui->sBoxCMYKk->setValue(0);
 }
 
 void MainWindow::cmykSBoxChanged()
 {
     colourModel->setColourInCMYK(ui->sBoxCMYKc->value(), ui->sBoxCMYKm->value(),
-                                 ui->sBoxCMYKy->value(), ui->sBoxCMYKk->value());
+                                 ui->sBoxCMYKy->value());
     ui->sliderCMYKc->setSliderPosition(ui->sBoxCMYKc->value());
     ui->sliderCMYKm->setSliderPosition(ui->sBoxCMYKm->value());
     ui->sliderCMYKy->setSliderPosition(ui->sBoxCMYKy->value());
-    ui->sliderCMYKk->setSliderPosition(ui->sBoxCMYKk->value());
+    ui->sliderCMYKk->setSliderPosition(0);
+    ui->sBoxCMYKk->setValue(0);
 }
 
 void MainWindow::luvSliderMoved()
