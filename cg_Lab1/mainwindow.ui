@@ -93,17 +93,17 @@
       <property name="title">
        <string>RGB</string>
       </property>
-      <layout class="QVBoxLayout" name="verticalLayout">
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_3">
-         <item>
-          <widget class="QLabel" name="labelRGBr">
-           <property name="text">
-            <string>R</string>
+        <layout class="QGridLayout" name="gridLayout_4">
+         <item row="2" column="2">
+          <widget class="QSpinBox" name="sBoxRGBb">
+           <property name="maximum">
+            <number>255</number>
            </property>
           </widget>
          </item>
-         <item>
+         <item row="0" column="1">
           <widget class="QSlider" name="sliderRGBr">
            <property name="maximum">
             <number>255</number>
@@ -113,53 +113,7 @@
            </property>
           </widget>
          </item>
-         <item>
-          <widget class="QSpinBox" name="sBoxRGBr">
-           <property name="maximum">
-            <number>255</number>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_4">
-         <item>
-          <widget class="QLabel" name="labelRGBg">
-           <property name="text">
-            <string>G</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QSlider" name="sliderRGBg">
-           <property name="maximum">
-            <number>255</number>
-           </property>
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QSpinBox" name="sBoxRGBg">
-           <property name="maximum">
-            <number>255</number>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_5">
-         <item>
-          <widget class="QLabel" name="labelRGBb">
-           <property name="text">
-            <string>B</string>
-           </property>
-          </widget>
-         </item>
-         <item>
+         <item row="2" column="1">
           <widget class="QSlider" name="sliderRGBb">
            <property name="maximum">
             <number>255</number>
@@ -169,10 +123,57 @@
            </property>
           </widget>
          </item>
-         <item>
-          <widget class="QSpinBox" name="sBoxRGBb">
+         <item row="1" column="1">
+          <widget class="QSlider" name="sliderRGBg">
            <property name="maximum">
             <number>255</number>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="2">
+          <widget class="QSpinBox" name="sBoxRGBg">
+           <property name="maximum">
+            <number>255</number>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <widget class="QSpinBox" name="sBoxRGBr">
+           <property name="maximum">
+            <number>255</number>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="labelRGBb">
+           <property name="text">
+            <string>B</string>
+           </property>
+           <property name="buddy">
+            <cstring>sliderRGBb</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="labelRGBg">
+           <property name="text">
+            <string>G</string>
+           </property>
+           <property name="buddy">
+            <cstring>sliderRGBg</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QLabel" name="labelRGBr">
+           <property name="text">
+            <string>R</string>
+           </property>
+           <property name="buddy">
+            <cstring>sliderRGBr</cstring>
            </property>
           </widget>
          </item>
@@ -186,17 +187,49 @@
       <property name="title">
        <string>HSV</string>
       </property>
-      <layout class="QVBoxLayout" name="verticalLayout_3">
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_2">
-         <item>
-          <widget class="QLabel" name="labelHSVh">
-           <property name="text">
-            <string>H</string>
+        <layout class="QGridLayout" name="gridLayout_3">
+         <item row="2" column="1">
+          <widget class="QSlider" name="sliderHSVv">
+           <property name="maximum">
+            <number>100</number>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="tickPosition">
+            <enum>QSlider::NoTicks</enum>
            </property>
           </widget>
          </item>
-         <item>
+         <item row="1" column="2">
+          <widget class="QDoubleSpinBox" name="sBoxHSVs">
+           <property name="decimals">
+            <number>2</number>
+           </property>
+           <property name="maximum">
+            <double>1.000000000000000</double>
+           </property>
+           <property name="singleStep">
+            <double>0.010000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QSlider" name="sliderHSVs">
+           <property name="maximum">
+            <number>100</number>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="tickPosition">
+            <enum>QSlider::NoTicks</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
           <widget class="QSlider" name="sliderHSVh">
            <property name="minimum">
             <number>0</number>
@@ -212,75 +245,7 @@
            </property>
           </widget>
          </item>
-         <item>
-          <widget class="QSpinBox" name="sBoxHSVh">
-           <property name="maximum">
-            <number>359</number>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_6">
-         <item>
-          <widget class="QLabel" name="labelHSVs">
-           <property name="text">
-            <string>S</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QSlider" name="sliderHSVs">
-           <property name="maximum">
-            <number>100</number>
-           </property>
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="tickPosition">
-            <enum>QSlider::NoTicks</enum>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QDoubleSpinBox" name="sBoxHSVs">
-           <property name="decimals">
-            <number>2</number>
-           </property>
-           <property name="maximum">
-            <double>1.000000000000000</double>
-           </property>
-           <property name="singleStep">
-            <double>0.010000000000000</double>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_7">
-         <item>
-          <widget class="QLabel" name="labelHSVv">
-           <property name="text">
-            <string>V</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QSlider" name="sliderHSVv">
-           <property name="maximum">
-            <number>100</number>
-           </property>
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="tickPosition">
-            <enum>QSlider::NoTicks</enum>
-           </property>
-          </widget>
-         </item>
-         <item>
+         <item row="2" column="2">
           <widget class="QDoubleSpinBox" name="sBoxHSVv">
            <property name="decimals">
             <number>2</number>
@@ -290,6 +255,43 @@
            </property>
            <property name="singleStep">
             <double>0.010000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <widget class="QSpinBox" name="sBoxHSVh">
+           <property name="maximum">
+            <number>359</number>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QLabel" name="labelHSVh">
+           <property name="text">
+            <string>H</string>
+           </property>
+           <property name="buddy">
+            <cstring>sliderHSVh</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="labelHSVs">
+           <property name="text">
+            <string>S</string>
+           </property>
+           <property name="buddy">
+            <cstring>sliderHSVs</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="labelHSVv">
+           <property name="text">
+            <string>V</string>
+           </property>
+           <property name="buddy">
+            <cstring>sliderHSVv</cstring>
            </property>
           </widget>
          </item>
@@ -303,45 +305,10 @@
       <property name="title">
        <string>Lu'v'</string>
       </property>
-      <layout class="QVBoxLayout" name="verticalLayout_5">
+      <layout class="QHBoxLayout" name="horizontalLayout_4">
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_12">
-         <item>
-          <widget class="QLabel" name="labelLUVl">
-           <property name="text">
-            <string>L</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QSlider" name="sliderLUVl">
-           <property name="maximum">
-            <number>100</number>
-           </property>
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QSpinBox" name="sBoxLUVl">
-           <property name="maximum">
-            <number>100</number>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_14">
-         <item>
-          <widget class="QLabel" name="labelLUVu">
-           <property name="text">
-            <string>u'</string>
-           </property>
-          </widget>
-         </item>
-         <item>
+        <layout class="QGridLayout" name="gridLayout_5">
+         <item row="1" column="1">
           <widget class="QSlider" name="sliderLUVu">
            <property name="maximum">
             <number>100</number>
@@ -351,25 +318,7 @@
            </property>
           </widget>
          </item>
-         <item>
-          <widget class="QSpinBox" name="sBoxLUVu">
-           <property name="maximum">
-            <number>100</number>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_13">
-         <item>
-          <widget class="QLabel" name="labelLUVv">
-           <property name="text">
-            <string>v'</string>
-           </property>
-          </widget>
-         </item>
-         <item>
+         <item row="2" column="1">
           <widget class="QSlider" name="sliderLUVv">
            <property name="maximum">
             <number>100</number>
@@ -379,10 +328,64 @@
            </property>
           </widget>
          </item>
-         <item>
+         <item row="0" column="2">
+          <widget class="QSpinBox" name="sBoxLUVl">
+           <property name="maximum">
+            <number>100</number>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QSlider" name="sliderLUVl">
+           <property name="maximum">
+            <number>100</number>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="2">
           <widget class="QSpinBox" name="sBoxLUVv">
            <property name="maximum">
             <number>100</number>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="2">
+          <widget class="QSpinBox" name="sBoxLUVu">
+           <property name="maximum">
+            <number>100</number>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QLabel" name="labelLUVl">
+           <property name="text">
+            <string>L</string>
+           </property>
+           <property name="buddy">
+            <cstring>sliderLUVl</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="labelLUVu">
+           <property name="text">
+            <string>u'</string>
+           </property>
+           <property name="buddy">
+            <cstring>sliderLUVu</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="labelLUVv">
+           <property name="text">
+            <string>v'</string>
+           </property>
+           <property name="buddy">
+            <cstring>sliderLUVv</cstring>
            </property>
           </widget>
          </item>
@@ -396,45 +399,44 @@
       <property name="title">
        <string>CMYK</string>
       </property>
-      <layout class="QVBoxLayout" name="verticalLayout_4">
+      <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_8">
-         <item>
-          <widget class="QLabel" name="labelCMYKc">
-           <property name="text">
-            <string>C</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QSlider" name="sliderCMYKc">
+        <layout class="QGridLayout" name="gridLayout_2">
+         <item row="1" column="2">
+          <widget class="QSpinBox" name="sBoxCMYKm">
            <property name="maximum">
             <number>100</number>
            </property>
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
+          </widget>
+         </item>
+         <item row="2" column="2">
+          <widget class="QSpinBox" name="sBoxCMYKy">
+           <property name="maximum">
+            <number>100</number>
            </property>
           </widget>
          </item>
-         <item>
+         <item row="3" column="2">
+          <widget class="QSpinBox" name="sBoxCMYKk">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+           <property name="maximum">
+            <number>100</number>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2">
           <widget class="QSpinBox" name="sBoxCMYKc">
            <property name="maximum">
             <number>100</number>
            </property>
           </widget>
          </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_11">
-         <item>
-          <widget class="QLabel" name="labelCMYKm">
-           <property name="text">
-            <string>M</string>
-           </property>
-          </widget>
-         </item>
-         <item>
+         <item row="1" column="1">
           <widget class="QSlider" name="sliderCMYKm">
            <property name="maximum">
             <number>100</number>
@@ -444,25 +446,7 @@
            </property>
           </widget>
          </item>
-         <item>
-          <widget class="QSpinBox" name="sBoxCMYKm">
-           <property name="maximum">
-            <number>100</number>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_10">
-         <item>
-          <widget class="QLabel" name="labelCMYKy">
-           <property name="text">
-            <string>Y</string>
-           </property>
-          </widget>
-         </item>
-         <item>
+         <item row="2" column="1">
           <widget class="QSlider" name="sliderCMYKy">
            <property name="maximum">
             <number>100</number>
@@ -472,25 +456,7 @@
            </property>
           </widget>
          </item>
-         <item>
-          <widget class="QSpinBox" name="sBoxCMYKy">
-           <property name="maximum">
-            <number>100</number>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_9">
-         <item>
-          <widget class="QLabel" name="labelCMYKk">
-           <property name="text">
-            <string>K</string>
-           </property>
-          </widget>
-         </item>
-         <item>
+         <item row="3" column="1">
           <widget class="QSlider" name="sliderCMYKk">
            <property name="enabled">
             <bool>false</bool>
@@ -503,16 +469,53 @@
            </property>
           </widget>
          </item>
-         <item>
-          <widget class="QSpinBox" name="sBoxCMYKk">
-           <property name="enabled">
-            <bool>false</bool>
-           </property>
-           <property name="readOnly">
-            <bool>true</bool>
-           </property>
+         <item row="0" column="1">
+          <widget class="QSlider" name="sliderCMYKc">
            <property name="maximum">
             <number>100</number>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QLabel" name="labelCMYKc">
+           <property name="text">
+            <string>C</string>
+           </property>
+           <property name="buddy">
+            <cstring>sliderCMYKc</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="labelCMYKm">
+           <property name="text">
+            <string>M</string>
+           </property>
+           <property name="buddy">
+            <cstring>sliderCMYKm</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="labelCMYKy">
+           <property name="text">
+            <string>Y</string>
+           </property>
+           <property name="buddy">
+            <cstring>sliderCMYKy</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="labelCMYKk">
+           <property name="text">
+            <string>K</string>
+           </property>
+           <property name="buddy">
+            <cstring>sliderCMYKk</cstring>
            </property>
           </widget>
          </item>
@@ -534,12 +537,12 @@
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>369</x>
-     <y>54</y>
+     <x>372</x>
+     <y>214</y>
     </hint>
     <hint type="destinationlabel">
-     <x>520</x>
-     <y>61</y>
+     <x>426</x>
+     <y>214</y>
     </hint>
    </hints>
   </connection>
@@ -550,12 +553,12 @@
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>361</x>
-     <y>80</y>
+     <x>372</x>
+     <y>244</y>
     </hint>
     <hint type="destinationlabel">
-     <x>520</x>
-     <y>91</y>
+     <x>426</x>
+     <y>244</y>
     </hint>
    </hints>
   </connection>
@@ -566,12 +569,12 @@
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>368</x>
-     <y>113</y>
+     <x>372</x>
+     <y>274</y>
     </hint>
     <hint type="destinationlabel">
-     <x>520</x>
-     <y>121</y>
+     <x>426</x>
+     <y>274</y>
     </hint>
    </hints>
   </connection>
@@ -582,12 +585,12 @@
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>399</x>
-     <y>179</y>
+     <x>368</x>
+     <y>349</y>
     </hint>
     <hint type="destinationlabel">
-     <x>520</x>
-     <y>192</y>
+     <x>426</x>
+     <y>349</y>
     </hint>
    </hints>
   </connection>
@@ -598,12 +601,12 @@
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>161</x>
-     <y>446</y>
+     <x>202</x>
+     <y>618</y>
     </hint>
     <hint type="destinationlabel">
-     <x>520</x>
-     <y>446</y>
+     <x>426</x>
+     <y>618</y>
     </hint>
    </hints>
   </connection>
@@ -614,12 +617,12 @@
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>165</x>
-     <y>468</y>
+     <x>206</x>
+     <y>647</y>
     </hint>
     <hint type="destinationlabel">
-     <x>520</x>
-     <y>468</y>
+     <x>426</x>
+     <y>647</y>
     </hint>
    </hints>
   </connection>
@@ -630,12 +633,12 @@
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>159</x>
-     <y>491</y>
+     <x>200</x>
+     <y>676</y>
     </hint>
     <hint type="destinationlabel">
-     <x>520</x>
-     <y>491</y>
+     <x>426</x>
+     <y>676</y>
     </hint>
    </hints>
   </connection>
@@ -646,12 +649,12 @@
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>159</x>
-     <y>513</y>
+     <x>200</x>
+     <y>705</y>
     </hint>
     <hint type="destinationlabel">
-     <x>520</x>
-     <y>513</y>
+     <x>426</x>
+     <y>705</y>
     </hint>
    </hints>
   </connection>
@@ -662,12 +665,12 @@
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>443</x>
-     <y>307</y>
+     <x>372</x>
+     <y>484</y>
     </hint>
     <hint type="destinationlabel">
-     <x>493</x>
-     <y>314</y>
+     <x>426</x>
+     <y>484</y>
     </hint>
    </hints>
   </connection>
@@ -678,12 +681,12 @@
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>421</x>
-     <y>345</y>
+     <x>372</x>
+     <y>514</y>
     </hint>
     <hint type="destinationlabel">
-     <x>501</x>
-     <y>345</y>
+     <x>426</x>
+     <y>514</y>
     </hint>
    </hints>
   </connection>
@@ -694,12 +697,12 @@
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>409</x>
-     <y>371</y>
+     <x>372</x>
+     <y>544</y>
     </hint>
     <hint type="destinationlabel">
-     <x>499</x>
-     <y>372</y>
+     <x>426</x>
+     <y>544</y>
     </hint>
    </hints>
   </connection>

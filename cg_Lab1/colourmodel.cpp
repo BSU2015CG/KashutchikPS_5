@@ -1,5 +1,4 @@
 #include "colourmodel.h"
-#include <QDebug>
 #include "math.h"
 
 ColourModel::ColourModel(QObject *parent) : QObject(parent) { rgb.r = rgb.g = rgb.b = 255; }
@@ -65,9 +64,9 @@ void ColourModel::setColourInCMYK(int _in_c, int _in_m, int _in_y)
 {
     if (_in_c >= 0 && _in_c <= 100 && _in_m >= 0 && _in_m <= 100 && _in_y >= 0 && _in_y <= 100) {
 
-        rgb.r = 255 * (100 - _in_c) / 100;
-        rgb.g = 255 * (100 - _in_m) / 100;
-        rgb.b = 255 * (100 - _in_y) / 100;
+        rgb.r = round(2.55 * (100 - _in_c));
+        rgb.g = round(2.55 * (100 - _in_m));
+        rgb.b = round(2.55 * (100 - _in_y));
 
         emit colourChanged("CMYK");
     }
@@ -100,14 +99,13 @@ void ColourModel::setColourInLUV(int _in_l, int _in_u, int _in_v)
     else
         b = 12.92 * b;
 
-    if (r < 0 || r >= 1 || g < 0 || g >= 1 || b < 0 || b >= 1) {
+    rgb.r = r < 0 ? 0 : r > 1 ? 255 : r * 255;
+    rgb.g = g < 0 ? 0 : g > 1 ? 255 : g * 255;
+    rgb.b = b < 0 ? 0 : b > 1 ? 255 : b * 255;
+    emit colourChanged("LUV");
+
+    if (r < 0 || r > 1 || g < 0 || g > 1 || b < 0 || b > 1)
         emit colourChanged("ERROR");
-    } else {
-        rgb.r = r * 255;
-        rgb.g = g * 255;
-        rgb.b = b * 255;
-        emit colourChanged("LUV");
-    }
 }
 
 RGB ColourModel::getRGB() { return rgb; }
@@ -159,10 +157,6 @@ CMYK ColourModel::getCMYK()
     max = rgb.r > rgb.g ? rgb.r : rgb.g;
     max = max > rgb.b ? max : rgb.b;
     k = 1 - max / 255.;
-
-    c = c - k;
-    m = m - k;
-    y = y - k;
 
     _out_cmyk.c = c * 100;
     _out_cmyk.m = m * 100;

@@ -2,7 +2,6 @@
 #include "ui_mainwindow.h"
 #include <QDesktopWidget>
 #include <QScreen>
-#include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
@@ -142,8 +141,9 @@ void MainWindow::hsvSBoxChanged()
 
 void MainWindow::cmykSliderMoved()
 {
-    colourModel->setColourInCMYK(ui->sliderCMYKc->value(), ui->sliderCMYKm->value(),
-                                 ui->sliderCMYKy->value());
+    colourModel->setColourInCMYK(ui->sliderCMYKc->sliderPosition(),
+                                 ui->sliderCMYKm->sliderPosition(),
+                                 ui->sliderCMYKy->sliderPosition());
     ui->sliderCMYKk->setSliderPosition(0);
     ui->sBoxCMYKk->setValue(0);
 }
@@ -161,13 +161,12 @@ void MainWindow::cmykSBoxChanged()
 
 void MainWindow::luvSliderMoved()
 {
-    colourModel->setColourInLUV(ui->sliderLUVl->value(), ui->sliderLUVu->value(),
-                                ui->sliderLUVv->value());
+    colourModel->setColourInLUV(ui->sliderLUVl->sliderPosition(), ui->sliderLUVu->sliderPosition(),
+                                ui->sliderLUVv->sliderPosition());
 }
 
 void MainWindow::luvSBoxChanged()
 {
-
     colourModel->setColourInLUV(ui->sBoxLUVl->value(), ui->sBoxLUVu->value(),
                                 ui->sBoxLUVv->value());
     ui->sliderLUVl->setSliderPosition(ui->sBoxLUVl->value());
