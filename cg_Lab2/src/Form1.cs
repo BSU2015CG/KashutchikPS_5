@@ -27,7 +27,7 @@ namespace cg_Lab2
             {
                 image = Image.FromFile(fileName);
             }
-            catch (System.IO.FileNotFoundException)
+            catch (System.Exception)
             {
                 return;
             }
@@ -42,7 +42,26 @@ namespace cg_Lab2
             txtCompression.Text = "no data";
             foreach (PropertyItem i in propItems)
                 if (i.Id == 0x0103)
-                    txtCompression.Text = i.Value.ToString();
+                {
+                    switch (BitConverter.ToInt16(i.Value, 0))
+                    {
+                        case 1:
+                            txtCompression.Text = "No compression";
+                            break;
+                        case 2:
+                            txtCompression.Text = "CCITT Group 3";
+                            break;
+                        case 3:
+                            txtCompression.Text = "Facsimile-compatible CCITT Group 3";
+                            break;
+                        case 4:
+                            txtCompression.Text = "CCIT Group 4 (T.6)";
+                            break;
+                        case 5:
+                            txtCompression.Text = "LZW";
+                            break;
+                    }
+                }
 
             txtLuminanceTable.Text = "";
             foreach (PropertyItem property in image.PropertyItems)

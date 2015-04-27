@@ -59,8 +59,8 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            this.openFileDialog1.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png, *.bmp) | *.jpg; *.jpeg; *.jpe; " +
-    "*.jfif; *.png; *.bmp";
+            this.openFileDialog1.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.tif,*.jfif, *.png, *.bmp) | *.jpg; *.jpeg; *" +
+    ".jpe; *.tif; *.jfif; *.png; *.bmp";
             // 
             // pictureBox1
             // 
